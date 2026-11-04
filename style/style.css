@@ -1,5 +1,680 @@
-body {
+/* ==========================================================================
+   Coffee Vibe Login Form - Pure HTML & CSS (with Font Awesome & Poppins)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --coffee-espresso: #2b1810;
+    --coffee-roast: #43281c;
+    --coffee-mocha: #6f4e37;
+    --coffee-caramel: #a86230;
+    --coffee-amber: #c88d51;
+    --coffee-amber-hover: #b0753b;
+    --coffee-latte: #ddc3a5;
+    --coffee-cream: #f7f1eb;
+    --coffee-foam: #fdfbf9;
+    --bg-page: #f4ede4;
+    --bg-card: #ffffff;
+    --bg-input: #faf6f0;
+    --border-input: #e6dacd;
+    --text-dark: #2c1a11;
+    --text-muted: #826e63;
+    --radius-card: 26px;
+    --radius-input: 12px;
+    --radius-pill: 50px;
+}
+
+*, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body, input, button:not(.toggle-password), select, textarea, label, span:not([class*="fa-"]), p, h1, h2, h3, h4, h5, h6, code, .swal2-popup, .swal2-title, .swal2-html-container, .swal2-confirm {
+    font-family: 'Poppins', sans-serif !important;
+}
+
+/* Ensure Font Awesome 6 icons render with font-weight 900 */
+.fa-solid, .fas {
+    font-family: "Font Awesome 6 Free" !important;
+    font-weight: 900 !important;
+    font-style: normal !important;
+    font-variant: normal !important;
+    text-rendering: auto !important;
+    line-height: 1 !important;
+}
+
+.fa-regular, .far {
+    font-family: "Font Awesome 6 Free" !important;
+    font-weight: 400 !important;
+    font-style: normal !important;
+}
+
+.fa-brands, .fab {
+    font-family: "Font Awesome 6 Brands" !important;
+    font-weight: 400 !important;
+    font-style: normal !important;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: #1a1310;
+    box-sizing: border-box;
+    color: var(--text-dark);
+    overflow: hidden;
+}
+
+/* ==========================================================================
+   Screen Switching & Transitions (Welcome Screen <-> Login Screen)
+   ========================================================================== */
+.screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.45s ease, transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: scale(0.95);
+    z-index: 1;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.screen.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: scale(1);
+    z-index: 10;
+}
+
+/* Screen 1: Welcome Screen (Dark Roast Theme) */
+.welcome-screen {
+    background-color: #221915;
+    background: radial-gradient(circle at 50% 40%, #2b1f1a 0%, #221915 60%, #1a1310 100%);
+    color: #ffffff;
+}
+
+.welcome-card {
+    width: 100%;
+    max-width: 330px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 92vh;
+    max-height: 650px;
+    padding: 16px 12px;
+}
+
+.artwork-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    min-height: 0;
+}
+
+.welcome-poster {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+}
+
+.steam-container {
+    width: 80px;
+    height: 34px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: steamRise 3s ease-in-out infinite alternate;
+}
+
+@keyframes steamRise {
+    0% { transform: translateY(0); opacity: 0.8; }
+    100% { transform: translateY(-5px); opacity: 1; }
+}
+
+.steam-svg {
+    width: 100%;
+    height: 100%;
+}
+
+.welcome-title-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.welcome-word {
+    font-size: 38px;
+    font-weight: 800;
+    font-style: italic;
+    color: #ffffff;
+    line-height: 1.1;
+    letter-spacing: 0.5px;
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.4));
+}
+
+.to-word {
+    font-size: 18px;
+    font-weight: 900;
+    color: #d88b35;
+    letter-spacing: 6px;
+    margin-top: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.to-word::before,
+.to-word::after {
+    content: "";
+    display: inline-block;
+    width: 24px;
+    height: 2px;
+    background: #d88b35;
+    border-radius: 2px;
+}
+
+.welcome-logo-frame {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 4.5px solid #d88b35;
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.5), 0 0 25px rgba(216, 139, 53, 0.28);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin-top: 6px;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.welcome-logo-frame:hover {
+    transform: scale(1.04);
+    box-shadow: 0 18px 42px rgba(0, 0, 0, 0.6), 0 0 35px rgba(216, 139, 53, 0.45);
+}
+
+.welcome-logo-img {
+    width: 92%;
+    height: 92%;
+    object-fit: contain;
+    display: block;
+}
+
+/* "Get Started" Button */
+.btn-get-started {
+    width: 100%;
+    max-width: 280px;
+    padding: 14px 24px;
+    background: #c88137;
+    color: #ffffff;
+    border: none;
+    border-radius: 14px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 8px 24px rgba(200, 129, 55, 0.4);
+    transition: all 0.25s ease;
+    margin-top: 12px;
+    font-family: 'Poppins', sans-serif !important;
+}
+
+.btn-get-started:hover {
+    background: #b5712c;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(200, 129, 55, 0.5);
+}
+
+.btn-get-started:active {
+    transform: translateY(0);
+}
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+.btn-get-started:hover {
+    background: #b5722c;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(200, 129, 55, 0.5);
+}
+
+.btn-get-started:active {
+    transform: translateY(0);
+}
+
+/* Screen 2: Login Screen (Cream & Warm Mocha Theme) */
+.login-screen {
+    background: radial-gradient(circle at 80% 20%, #e8ddce 0%, #f4ede4 50%, #eee4d8 100%);
+}
+
+/* Back Button on Login Card */
+.btn-back {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background: none;
+    border: none;
+    color: var(--coffee-roast);
+    font-size: 15px;
+    cursor: pointer;
+    padding: 7px;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+}
+
+.btn-back:hover {
+    background-color: #f0e6dc;
+    color: var(--coffee-amber);
+    transform: translateX(-2px);
+}
+
+/* Subtle warm coffee ambient glows (fixed so they never cause scrollbars) */
+body::before {
+    content: "";
+    position: fixed;
+    width: 480px;
+    height: 480px;
+    background: radial-gradient(circle, rgba(200, 141, 81, 0.18) 0%, rgba(244, 237, 228, 0) 70%);
+    top: -100px;
+    right: 15%;
+    border-radius: 50%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(111, 78, 55, 0.12) 0%, rgba(244, 237, 228, 0) 70%);
+    bottom: -80px;
+    left: 15%;
+    border-radius: 50%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* ==========================================================================
+   Modern Coffee Line Art SVG Background
+   ========================================================================== */
+.coffee-bg-svg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.coffee-bg-svg svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* Subtle gentle breathing opacity animation (does not override SVG transform coordinates) */
+@keyframes beanPulse {
+    0%, 100% { opacity: 0.85; }
+    50% { opacity: 0.65; }
+}
+
+.coffee-bg-svg .bean-group {
+    animation: beanPulse 5s ease-in-out infinite;
+}
+
+.coffee-bg-svg .bean-group:nth-of-type(2n) {
+    animation-delay: -2.5s;
+    animation-duration: 6.5s;
+}
+
+/* ==========================================================================
+   Login Card
+   ========================================================================== */
+.login-card {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 385px;
+    background: var(--bg-card);
+    border-radius: 22px;
+    padding: 34px 28px 26px 28px;
+    box-shadow: 0 20px 60px rgba(67, 40, 28, 0.11), 0 6px 20px rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(230, 218, 205, 0.75);
+}
+
+/* Logo & Header */
+.card-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Coffee House Vintage Logo */
+.logo-image-wrapper {
+    width: 170px;
+    height: 115px;
+    margin: 0 auto 10px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.logo-image-wrapper:hover {
+    transform: scale(1.06);
+}
+
+.brand-logo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    filter: drop-shadow(0 4px 10px rgba(67, 40, 28, 0.12));
+}
+
+.logo-badge {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #43281c 0%, #6f4e37 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 12px auto;
+    box-shadow: 0 6px 16px rgba(67, 40, 28, 0.22);
+    border: 3px solid #f4ede4;
+}
+
+.logo-badge i {
+    font-size: 21px;
+    color: #f7d6b3;
+}
+
+.brand-title {
+    font-size: 11px;
+    font-weight: 800;
+    color: var(--coffee-amber);
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.card-heading {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--coffee-espresso);
+    line-height: 1.25;
+    margin-bottom: 5px;
+}
+
+.card-subtitle {
+    font-size: 12px;
+    color: var(--text-muted);
+    font-weight: 400;
+}
+
+/* ==========================================================================
+   Form Fields
+   ========================================================================== */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-group label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    color: var(--coffee-roast);
+    text-transform: uppercase;
+}
+
+.input-box {
+    width: 100%;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 11px 15px;
+    font-size: 13px;
+    background-color: var(--bg-input);
+    border: 1.3px solid var(--border-input);
+    border-radius: 10px;
+    outline: none;
+    color: var(--text-dark);
+    transition: all 0.25s ease;
+}
+
+.input-box input::placeholder {
+    color: #b5a395;
+    font-size: 12px;
+}
+
+.input-box input:focus {
+    background-color: #ffffff;
+    border-color: var(--coffee-amber);
+    box-shadow: 0 0 0 3.5px rgba(200, 141, 81, 0.18);
+}
+
+/* Prevent browser autofill from turning inputs blue */
+.input-box input:-webkit-autofill,
+.input-box input:-webkit-autofill:hover, 
+.input-box input:-webkit-autofill:focus,
+.input-box input:-webkit-autofill:active {
+    -webkit-text-fill-color: var(--text-dark) !important;
+    -webkit-box-shadow: 0 0 0 1000px #faf6f0 inset !important;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Password Box with Show/Hide Toggle */
+.password-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-box input {
+    padding-right: 42px;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 12px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    transition: transform 0.15s ease;
+}
+
+.toggle-password i,
+.toggle-password svg {
+    font-size: 14px;
+    width: 14px;
+    height: 14px;
+    color: #9c897c;
+    fill: #9c897c;
+    transition: color 0.2s ease, fill 0.2s ease;
+}
+
+.toggle-password:hover {
+    transform: scale(1.1);
+}
+
+.toggle-password:hover i,
+.toggle-password:hover svg {
+    color: var(--coffee-amber);
+    fill: var(--coffee-amber);
+}
+
+/* ==========================================================================
+   Submit Button
+   ========================================================================== */
+.btn-login {
+    margin-top: 5px;
+    width: 100%;
+    padding: 12px 18px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: #ffffff;
+    background: linear-gradient(135deg, #43281c 0%, #6f4e37 100%);
+    border: none;
+    border-radius: var(--radius-pill);
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(67, 40, 28, 0.3);
+    transition: all 0.25s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+}
+
+.btn-login:hover {
+    background: linear-gradient(135deg, #351e14 0%, #5d3d29 100%);
+    transform: translateY(-1.5px);
+    box-shadow: 0 9px 24px rgba(67, 40, 28, 0.4);
+}
+
+.btn-login:active {
+    transform: translateY(0);
+}
+
+.btn-login:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+/* ==========================================================================
+   Demo Credentials Box (Coffee Tag Style - Compact)
+   ========================================================================== */
+.demo-box {
+    background-color: #f8f3ec;
+    border: 1px dashed var(--coffee-amber);
+    border-radius: 10px;
+    padding: 10px 13px;
+    margin-top: 18px;
+    margin-bottom: 0;
+    font-size: 11px;
+}
+
+.demo-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.demo-badge {
+    background-color: var(--coffee-roast);
+    color: #f7d6b3;
+    font-size: 8.5px;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+    padding: 2.5px 7px;
+    border-radius: 4px;
+}
+
+.demo-details {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    color: #634f43;
+}
+
+.demo-details code {
+    background-color: #ffffff;
+    border: 1px solid #dfd1c3;
+    padding: 1px 5px;
+    border-radius: 3px;
+    color: var(--coffee-caramel);
+    font-weight: 600;
+    font-family: inherit;
+    font-size: 11px;
+}
+
+/* ==========================================================================
+   SweetAlert2 Custom Coffee Styling
+   ========================================================================== */
+.swal2-popup {
+    font-family: 'Poppins', -apple-system, sans-serif !important;
+    border-radius: 24px !important;
+    padding: 28px 24px !important;
+    box-shadow: 0 25px 70px rgba(67, 40, 28, 0.2) !important;
+    border: 1px solid rgba(230, 218, 205, 0.8) !important;
+}
+
+.swal2-title {
+    font-size: 22px !important;
+    font-weight: 800 !important;
+    color: var(--coffee-espresso) !important;
+}
+
+.swal2-html-container {
+    font-size: 13.5px !important;
+    color: var(--text-muted) !important;
+}
+
+.swal2-confirm {
+    border-radius: 50px !important;
+    padding: 12px 30px !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.5px !important;
+    background-color: var(--coffee-mocha) !important;
+    box-shadow: 0 6px 18px rgba(111, 78, 55, 0.35) !important;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 480px) {
+    .login-card {
+        padding: 34px 22px 28px 22px;
+        border-radius: 22px;
+    }
+
+    .card-heading {
+        font-size: 22px;
+    }
 }

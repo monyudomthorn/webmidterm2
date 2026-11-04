@@ -3,9 +3,204 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Welcome to Coffee House</title>
+    <link rel="icon" type="image/png" href="../images/coffee-logo.png">
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js" defer></script>
+    <link rel="stylesheet" href="../style/style.css">
+    <!-- SweetAlert2 CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
-    
+    <!-- ====================================================================
+         SCREEN 1: WELCOME SCREEN ("Welcome to Coffee House")
+         ==================================================================== -->
+    <div id="welcome-screen" class="screen welcome-screen active">
+        <div class="welcome-card">
+            <!-- Welcome Artwork with Coffee House Logo -->
+            <div class="artwork-container">
+                <div class="welcome-poster">
+                    <!-- Golden Steam Wisps -->
+                    <div class="steam-container" aria-hidden="true">
+                        <svg class="steam-svg" viewBox="0 0 100 45" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M30 40 Q 22 22 32 6 Q 36 22 30 40" fill="#d88b35"/>
+                            <path d="M50 36 Q 42 16 52 2 Q 56 16 50 36" fill="#d88b35"/>
+                            <path d="M68 40 Q 60 22 70 8 Q 74 22 68 40" fill="#d88b35"/>
+                        </svg>
+                    </div>
+
+                    <!-- Welcome Title -->
+                    <div class="welcome-title-group">
+                        <div class="welcome-word">Welcome</div>
+                        <div class="to-word">TO</div>
+                    </div>
+
+                    <!-- Official Coffee House Logo Medallion -->
+                    <div class="welcome-logo-frame">
+                        <img src="../images/coffee-logo.png" alt="Coffee House Logo" class="welcome-logo-img">
+                    </div>
+                </div>
+            </div>
+
+            <!-- "Get Started" Action Button -->
+            <button type="button" id="btn-get-started" class="btn-get-started">
+                Get Started
+            </button>
+        </div>
+    </div>
+
+    <!-- ====================================================================
+         SCREEN 2: LOGIN FORM SCREEN (With Floating Coffee Beans)
+         ==================================================================== -->
+    <div id="login-screen" class="screen login-screen">
+        <!-- Clearly Visible Coffee Beans SVG Background -->
+        <div class="coffee-bg-svg" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
+                <!-- LEFT SIDE COFFEE BEANS -->
+                <g class="bean-group" transform="translate(140, 160) rotate(-30)">
+                    <path d="M18 4 C 8 4, 2 13, 2 26 C 2 39, 8 48, 18 48 C 28 48, 34 39, 34 26 C 34 13, 28 4, 18 4 Z" fill="#d9b691" stroke="#5c3826" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M18 6 C 12 16, 24 28, 18 38 C 15 43, 20 45, 18 46" fill="none" stroke="#4a2c1d" stroke-width="2" stroke-linecap="round" />
+                </g>
+                <g class="bean-group" transform="translate(270, 240) rotate(35)">
+                    <path d="M14 3 C 6 3, 2 10, 2 20 C 2 30, 6 37, 14 37 C 22 37, 26 30, 26 20 C 26 10, 22 3, 14 3 Z" fill="#e2c5a8" stroke="#7a4628" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M14 5 C 9 12, 19 22, 14 30 C 11.5 34, 15 35.5, 14 35.5" fill="none" stroke="#5c3826" stroke-width="1.8" stroke-linecap="round" />
+                </g>
+                <g class="bean-group" transform="translate(120, 390) rotate(50)">
+                    <path d="M18 4 C 8 4, 2 13, 2 26 C 2 39, 8 48, 18 48 C 28 48, 34 39, 34 26 C 34 13, 28 4, 18 4 Z" fill="#cfa47c" stroke="#5c3826" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M18 6 C 12 16, 24 28, 18 38 C 15 43, 20 45, 18 46" fill="none" stroke="#4a2c1d" stroke-width="2" stroke-linecap="round" />
+                </g>
+                <g class="bean-group" transform="translate(250, 520) rotate(-20)">
+                    <path d="M14 3 C 6 3, 2 10, 2 20 C 2 30, 6 37, 14 37 C 22 37, 26 30, 26 20 C 26 10, 22 3, 14 3 Z" fill="#d9b691" stroke="#5c3826" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M14 5 C 9 12, 19 22, 14 30 C 11.5 34, 15 35.5, 14 35.5" fill="none" stroke="#4a2c1d" stroke-width="1.8" stroke-linecap="round" />
+                </g>
+                <g class="bean-group" transform="translate(150, 680) rotate(35)">
+                    <path d="M18 4 C 8 4, 2 13, 2 26 C 2 39, 8 48, 18 48 C 28 48, 34 39, 34 26 C 34 13, 28 4, 18 4 Z" fill="#e2c5a8" stroke="#7a4628" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M18 6 C 12 16, 24 28, 18 38 C 15 43, 20 45, 18 46" fill="none" stroke="#5c3826" stroke-width="2" stroke-linecap="round" />
+                </g>
+                <g class="bean-group" transform="translate(280, 780) rotate(-45)">
+                    <path d="M14 3 C 6 3, 2 10, 2 20 C 2 30, 6 37, 14 37 C 22 37, 26 30, 26 20 C 26 10, 22 3, 14 3 Z" fill="#cfa47c" stroke="#5c3826" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M14 5 C 9 12, 19 22, 14 30 C 11.5 34, 15 35.5, 14 35.5" fill="none" stroke="#4a2c1d" stroke-width="1.8" stroke-linecap="round" />
+                </g>
+
+                <!-- RIGHT SIDE COFFEE BEANS -->
+                <g class="bean-group" transform="translate(1260, 160) rotate(25)">
+                    <path d="M18 4 C 8 4, 2 13, 2 26 C 2 39, 8 48, 18 48 C 28 48, 34 39, 34 26 C 34 13, 28 4, 18 4 Z" fill="#d9b691" stroke="#5c3826" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M18 6 C 12 16, 24 28, 18 38 C 15 43, 20 45, 18 46" fill="none" stroke="#4a2c1d" stroke-width="2" stroke-linecap="round" />
+                </g>
+                <g class="bean-group" transform="translate(1140, 250) rotate(-35)">
+                    <path d="M14 3 C 6 3, 2 10, 2 20 C 2 30, 6 37, 14 37 C 22 37, 26 30, 26 20 C 26 10, 22 3, 14 3 Z" fill="#e2c5a8" stroke="#7a4628" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M14 5 C 9 12, 19 22, 14 30 C 11.5 34, 15 35.5, 14 35.5" fill="none" stroke="#5c3826" stroke-width="1.8" stroke-linecap="round" />
+                </g>
+                <g class="bean-group" transform="translate(1290, 400) rotate(-20)">
+                    <path d="M18 4 C 8 4, 2 13, 2 26 C 2 39, 8 48, 18 48 C 28 48, 34 39, 34 26 C 34 13, 28 4, 18 4 Z" fill="#cfa47c" stroke="#5c3826" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M18 6 C 12 16, 24 28, 18 38 C 15 43, 20 45, 18 46" fill="none" stroke="#4a2c1d" stroke-width="2" stroke-linecap="round" />
+                </g>
+                <g class="bean-group" transform="translate(1160, 530) rotate(45)">
+                    <path d="M14 3 C 6 3, 2 10, 2 20 C 2 30, 6 37, 14 37 C 22 37, 26 30, 26 20 C 26 10, 22 3, 14 3 Z" fill="#d9b691" stroke="#5c3826" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M14 5 C 9 12, 19 22, 14 30 C 11.5 34, 15 35.5, 14 35.5" fill="none" stroke="#4a2c1d" stroke-width="1.8" stroke-linecap="round" />
+                </g>
+                <g class="bean-group" transform="translate(1270, 690) rotate(-30)">
+                    <path d="M18 4 C 8 4, 2 13, 2 26 C 2 39, 8 48, 18 48 C 28 48, 34 39, 34 26 C 34 13, 28 4, 18 4 Z" fill="#e2c5a8" stroke="#7a4628" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M18 6 C 12 16, 24 28, 18 38 C 15 43, 20 45, 18 46" fill="none" stroke="#5c3826" stroke-width="2" stroke-linecap="round" />
+                </g>
+                <g class="bean-group" transform="translate(1150, 790) rotate(20)">
+                    <path d="M14 3 C 6 3, 2 10, 2 20 C 2 30, 6 37, 14 37 C 22 37, 26 30, 26 20 C 26 10, 22 3, 14 3 Z" fill="#cfa47c" stroke="#5c3826" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M14 5 C 9 12, 19 22, 14 30 C 11.5 34, 15 35.5, 14 35.5" fill="none" stroke="#4a2c1d" stroke-width="1.8" stroke-linecap="round" />
+                </g>
+
+                <!-- TOP & BOTTOM ACCENTS -->
+                <g class="bean-group" transform="translate(420, 110) rotate(-15)">
+                    <path d="M14 3 C 6 3, 2 10, 2 20 C 2 30, 6 37, 14 37 C 22 37, 26 30, 26 20 C 26 10, 22 3, 14 3 Z" fill="#d9b691" stroke="#5c3826" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M14 5 C 9 12, 19 22, 14 30 C 11.5 34, 15 35.5, 14 35.5" fill="none" stroke="#4a2c1d" stroke-width="1.8" stroke-linecap="round" />
+                </g>
+                <g class="bean-group" transform="translate(990, 110) rotate(30)">
+                    <path d="M14 3 C 6 3, 2 10, 2 20 C 2 30, 6 37, 14 37 C 22 37, 26 30, 26 20 C 26 10, 22 3, 14 3 Z" fill="#e2c5a8" stroke="#7a4628" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M14 5 C 9 12, 19 22, 14 30 C 11.5 34, 15 35.5, 14 35.5" fill="none" stroke="#5c3826" stroke-width="1.8" stroke-linecap="round" />
+                </g>
+                <g class="bean-group" transform="translate(450, 790) rotate(40)">
+                    <path d="M14 3 C 6 3, 2 10, 2 20 C 2 30, 6 37, 14 37 C 22 37, 26 30, 26 20 C 26 10, 22 3, 14 3 Z" fill="#cfa47c" stroke="#5c3826" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M14 5 C 9 12, 19 22, 14 30 C 11.5 34, 15 35.5, 14 35.5" fill="none" stroke="#4a2c1d" stroke-width="1.8" stroke-linecap="round" />
+                </g>
+                <g class="bean-group" transform="translate(970, 800) rotate(-25)">
+                    <path d="M14 3 C 6 3, 2 10, 2 20 C 2 30, 6 37, 14 37 C 22 37, 26 30, 26 20 C 26 10, 22 3, 14 3 Z" fill="#d9b691" stroke="#5c3826" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M14 5 C 9 12, 19 22, 14 30 C 11.5 34, 15 35.5, 14 35.5" fill="none" stroke="#4a2c1d" stroke-width="1.8" stroke-linecap="round" />
+                </g>
+            </svg>
+        </div>
+
+        <!-- Login Card -->
+        <div class="login-card">
+            <!-- Back to Welcome Screen Button -->
+            <button type="button" id="btn-back-to-welcome" class="btn-back" title="Back to Welcome">
+                <i class="fa-solid fa-arrow-left"></i>
+            </button>
+
+            <!-- Coffee Badge & Header -->
+            <div class="card-header">
+                <div class="logo-image-wrapper">
+                    <img src="../images/coffee-logo.png" alt="Coffee House Logo" class="brand-logo-img">
+                </div>
+                <h1 class="card-heading">Welcome to<br>Coffee House</h1>
+                <p class="card-subtitle">Sign in to enjoy your daily roast & perks</p>
+            </div>
+
+            <!-- Login Form -->
+            <form class="login-form" action="#" method="POST">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <div class="input-box">
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            placeholder="Dunkin@gmail.com" 
+                            autocomplete="email"
+                            required
+                        >
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <div class="input-box password-box">
+                        <input 
+                            type="password" 
+                            id="password" 
+                            name="password" 
+                            placeholder="Enter your password" 
+                            autocomplete="current-password"
+                            required
+                        >
+                        <button type="button" id="toggle-password" class="toggle-password" title="Show/Hide Password" aria-label="Toggle password">
+                            <i id="eye-icon" class="fa-solid fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-login">
+                    <i class="fa-solid fa-mug-saucer"></i> Sign In
+                </button>
+            </form>
+
+            <!-- Demo Credentials Info Box (Coffee Roast Style) -->
+            <div class="demo-box">
+                <div class="demo-header">
+                    <span class="demo-badge"><i class="fa-solid fa-tag"></i> DEMO ACCOUNT</span>
+                </div>
+                <div class="demo-details">
+                    <div><strong>Email:</strong> <code>Dunkin@gmail.com</code></div>
+                    <div><strong>Password:</strong> <code>Dunkin1111</code></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Screen Switching & Login Verification Script -->
+    <script src="../js/main.js"></script>
 </body>
 </html>

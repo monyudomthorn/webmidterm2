@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 160" width="100%" height="100%">
+    <!-- Saucer (White with Golden Double Rim) -->
+    <ellipse cx="150" cy="128" rx="124" ry="16" fill="#ffffff" stroke="#d88b35" stroke-width="3.5"/>
+    <ellipse cx="150" cy="126" rx="98" ry="9" fill="none" stroke="#d88b35" stroke-width="2.2"/>
+
+    <!-- Cup Handle (On Right with Golden Outline) -->
+    <path d="M 235 44 C 274 44, 274 94, 222 105 C 220 105, 220 96, 224 94 C 254 87, 254 57, 233 57 Z" fill="#ffffff" stroke="#d88b35" stroke-width="3" stroke-linejoin="round"/>
+
+    <!-- Cup Ceramic Body (White with Golden Outline) -->
+    <path d="M 50 30 C 50 106, 90 118, 150 118 C 210 118, 250 106, 250 30 Z" fill="#ffffff" stroke="#d88b35" stroke-width="3.5" stroke-linejoin="round"/>
+
+    <!-- Coffee Liquid Surface (Top Rim) -->
+    <ellipse cx="150" cy="30" rx="100" ry="22" fill="#23150d" stroke="#d88b35" stroke-width="3.5"/>
+    <!-- Back Rim Subtle Coffee Tone -->
+    <ellipse cx="150" cy="28" rx="90" ry="16" fill="#382115"/>
+    <ellipse cx="150" cy="31" rx="88" ry="16" fill="#23150d"/>
+
+    <!-- Dark Heart On Front Rim & Body -->
+    <path d="M 150 42 
+             C 150 42, 131 24, 123 36 
+             C 117 45, 123 58, 150 78 
+             C 177 58, 183 45, 177 36 
+             C 169 24, 150 42, 150 42 Z" 
+          fill="#23150d"/>
+</svg>
+
