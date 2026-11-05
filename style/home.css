@@ -473,7 +473,7 @@ a {
 
 .drink-image {
     position: relative;
-    height: 250px;
+    height: 260px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -482,12 +482,14 @@ a {
 }
 
 .drink-image img {
-    width: 170px;
-    height: 210px;
-    object-fit: cover;
+    width: auto;
+    max-width: 170px;
+    height: 215px;
+    max-height: 85%;
+    object-fit: contain;
     border-radius: 12px;
-    filter: drop-shadow(0 10px 15px rgba(67, 40, 28, 0.1));
-    transition: transform 0.4s ease;
+    filter: drop-shadow(0 14px 20px rgba(67, 40, 28, 0.16));
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .drink-card:hover img {
@@ -956,8 +958,9 @@ a {
     width: 52px;
     height: 52px;
     border-radius: 10px;
-    object-fit: cover;
+    object-fit: contain;
     background: #fbf8f5;
+    padding: 3px;
 }
 
 .cart-meta {
@@ -1142,10 +1145,12 @@ a {
     width: 46px;
     height: 46px;
     border-radius: 12px;
-    object-fit: cover;
+    object-fit: contain;
     flex-shrink: 0;
     border: 1.5px solid rgba(200, 141, 81, 0.5);
     box-shadow: none !important;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 2px;
 }
 
 .coffee-toast-info {
@@ -1372,7 +1377,8 @@ a {
 .custom-modal-img-wrap img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    padding: 3px;
 }
 
 .custom-modal-img-wrap .badge-custom {

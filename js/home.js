@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
             badge: 'Popular',
             badgeClass: 'popular',
             desc: 'Smooth espresso, rich condensed milk, fresh whole milk, and cold ice.',
-            image: 'https://images.unsplash.com/photo-1517701604599-bb29b565090c?w=500&auto=format&fit=crop&q=80'
+            image: '../images/Spanish Iced Latte.png'
         },
         {
             id: 'drink-3',
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
             badge: 'New',
             badgeClass: 'new',
             desc: 'Slow-steeped cold brew infused with nitrogen for a velvety head and sweet finish.',
-            image: 'https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?w=500&auto=format&fit=crop&q=80'
+            image: '../images/Nitro Cold Brew.png'
         },
         {
             id: 'drink-10',
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
             badge: 'Bestseller',
             badgeClass: 'bestseller',
             desc: 'Blonde roast shaken with brown sugar, warm cinnamon, and creamy oat milk.',
-            image: 'https://images.unsplash.com/photo-1577968897966-3d4325b36b61?w=500&auto=format&fit=crop&q=80'
+            image: '../images/Brown Sugar Shaken Espresso.png'
         },
         {
             id: 'drink-11',
@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
             badge: 'Fresh',
             badgeClass: 'fresh',
             desc: 'Signature 20-hour cold brew topped with sweet coconut cream cold foam.',
-            image: 'https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=500&auto=format&fit=crop&q=80'
+            image: '../images/Coconut Cream Cold Brew.png'
         },
         {
             id: 'drink-12',
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
             badge: 'Popular',
             badgeClass: 'popular',
             desc: 'Fluffy cold foam cloud layered with bold espresso and golden caramel grid.',
-            image: 'https://images.unsplash.com/photo-1485808191679-5f86510681a2?w=500&auto=format&fit=crop&q=80'
+            image: '../images/Iced Caramel Cloud Macchiato.png'
         },
         {
             id: 'drink-13',
@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
             badge: 'Classic',
             badgeClass: '',
             desc: 'Freshly pulled dark espresso shots poured over clear ice and filtered chilled water.',
-            image: 'https://images.unsplash.com/photo-1517701604599-bb29b565090c?w=500&auto=format&fit=crop&q=80'
+            image: '../images/Iced Coffee.png'
         },
         {
             id: 'drink-29',
@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
             badge: 'Sweet',
             badgeClass: 'popular',
             desc: 'Espresso mixed with aromatic Madagascan vanilla bean syrup and chilled whole milk.',
-            image: 'https://images.unsplash.com/photo-1534778101976-62847782c213?w=500&auto=format&fit=crop&q=80'
+            image: '../images/Iced Vanilla Bean Latte.png'
         },
         {
             id: 'drink-30',
@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
             badge: 'Popular',
             badgeClass: 'popular',
             desc: 'Custom blend cold brew accented with vanilla and finished with a cascade of sweet cream.',
-            image: 'https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?w=500&auto=format&fit=crop&q=80'
+            image: '../images/Vanilla Sweet Cream Cold Brew.png'
         },
 
         // --- HOT ESPRESSO ---
@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
             badge: 'Bestseller',
             badgeClass: 'bestseller',
             desc: 'Steamed milk with vanilla syrup, marked with espresso & caramel drizzle.',
-            image: 'https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=500&auto=format&fit=crop&q=80'
+            image: '../images/Caramel Macchiato.png'
         },
         {
             id: 'drink-4',
@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
             badge: 'Classic',
             badgeClass: '',
             desc: 'Equal parts dark espresso, warm steamed milk, and rich velvety micro-foam.',
-            image: 'https://images.unsplash.com/photo-1541167760496-1628856ab772?w=500&auto=format&fit=crop&q=80'
+            image: '../images/Classic Cappuccino.png'
         },
         {
             id: 'drink-7',
@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
             badge: 'Classic',
             badgeClass: '',
             desc: 'Double ristretto shot gently blended with smooth, creamy micro-textured milk.',
-            image: 'https://images.unsplash.com/photo-1534778101976-62847782c213?w=500&auto=format&fit=crop&q=80'
+            image: '../images/Vanilla Flat White.png'
         },
         {
             id: 'drink-14',
@@ -142,7 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
             badge: 'Pure',
             badgeClass: '',
             desc: 'Two intense, sweet, full-bodied espresso extractions with dense hazelnut crema.',
-            image: 'https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?w=500&auto=format&fit=crop&q=80'
+            image: '../images/Double Ristretto Espresso.png'
         },
         {
             id: 'drink-15',
@@ -517,7 +517,7 @@ document.addEventListener('DOMContentLoaded', () => {
             name: 'Spanish Iced Latte',
             price: 3.80,
             quantity: 1,
-            image: 'https://images.unsplash.com/photo-1517701604599-bb29b565090c?w=500&auto=format&fit=crop&q=80',
+            image: '../images/Spanish Iced Latte.png',
             customs: 'Regular (12oz) • 70% Sweet • Normal Ice',
             note: 'Less ice'
         },
