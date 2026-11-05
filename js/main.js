@@ -89,8 +89,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     text: 'Your table is ready. Fresh coffee awaits!',
                     confirmButtonText: 'Enjoy Coffee',
                     confirmButtonColor: '#6f4e37',
-                    timer: 2500,
+                    timer: 2000,
                     timerProgressBar: true
+                }).then(() => {
+                    window.location.href = 'home.html';
                 });
             } else {
                 // Error Popup (Coffee Vibe)
@@ -143,19 +145,29 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 1600);
         }
 
-        // SweetAlert2 Toast Feedback
+        // SweetAlert2 Toast Feedback (Coffee House Toast)
         if (typeof Swal !== 'undefined') {
             const Toast = Swal.mixin({
                 toast: true,
                 position: 'top',
                 showConfirmButton: false,
-                timer: 1500,
-                timerProgressBar: false
+                timer: 1800,
+                timerProgressBar: true,
+                customClass: {
+                    popup: 'coffee-toast-popup'
+                }
             });
 
             Toast.fire({
-                icon: 'success',
-                title: 'Demo credentials auto-filled!'
+                html: `
+                    <div style="display:flex;align-items:center;gap:10px;text-align:left;">
+                        <span style="font-size:22px;">☕</span>
+                        <div>
+                            <div style="font-size:10px;font-weight:800;color:#c88d51;letter-spacing:1px;text-transform:uppercase;">DEMO LOGIN</div>
+                            <div style="font-size:13px;font-weight:700;color:#ffffff;">Dunkin credentials loaded!</div>
+                        </div>
+                    </div>
+                `
             });
         }
     };

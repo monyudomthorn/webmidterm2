@@ -58,6 +58,11 @@ body, input, button:not(.toggle-password), select, textarea, label, span:not([cl
     font-style: normal !important;
 }
 
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
 body {
     min-height: 100vh;
     margin: 0;
@@ -65,7 +70,8 @@ body {
     background-color: #1a1310;
     box-sizing: border-box;
     color: var(--text-dark);
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 /* ==========================================================================
@@ -79,7 +85,6 @@ body {
     height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
     box-sizing: border-box;
     opacity: 0;
     visibility: hidden;
@@ -88,7 +93,9 @@ body {
     transform: scale(0.95);
     z-index: 1;
     overflow-y: auto;
-    padding: 20px;
+    overflow-x: hidden;
+    padding: 30px 20px;
+    -webkit-overflow-scrolling: touch;
 }
 
 .screen.active {
@@ -107,6 +114,7 @@ body {
 }
 
 .welcome-card {
+    margin: auto;
     width: 100%;
     max-width: 330px;
     display: flex;
@@ -356,6 +364,7 @@ body::after {
    Login Card
    ========================================================================== */
 .login-card {
+    margin: auto;
     position: relative;
     z-index: 10;
     width: 100%;
@@ -375,8 +384,8 @@ body::after {
 
 /* Coffee House Vintage Logo */
 .logo-image-wrapper {
-    width: 170px;
-    height: 115px;
+    width: 175px;
+    height: 142px;
     margin: 0 auto 10px auto;
     display: flex;
     justify-content: center;
@@ -756,6 +765,25 @@ body::after {
     letter-spacing: 0.5px !important;
     background-color: var(--coffee-mocha) !important;
     box-shadow: 0 6px 18px rgba(111, 78, 55, 0.35) !important;
+}
+
+/* Custom Coffee Toast in Login Screen */
+.swal2-popup.swal2-toast,
+.swal2-popup.swal2-toast.coffee-toast-popup {
+    background: linear-gradient(135deg, #2b1810 0%, #3e2417 100%) !important;
+    border: 1.5px solid rgba(200, 141, 81, 0.45) !important;
+    border-radius: 18px !important;
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    filter: none !important;
+    padding: 12px 18px !important;
+    color: #ffffff !important;
+    font-family: 'Poppins', sans-serif !important;
+}
+
+.swal2-popup.swal2-toast .swal2-timer-progress-bar {
+    background: linear-gradient(90deg, #a86230, #c88d51) !important;
+    height: 3px !important;
 }
 
 /* Mobile Responsiveness */
