@@ -107,4 +107,60 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }, 1200);
     });
+
+    // =========================================================================
+    // 4. Auto Fill Demo Credentials
+    // =========================================================================
+    const autoFillBtn = document.getElementById('btn-autofill');
+    const demoEmail = document.getElementById('demo-email');
+    const demoPassword = document.getElementById('demo-password');
+
+    const handleAutoFill = () => {
+        if (!emailInput || !passwordInput) return;
+
+        // Auto fill credentials
+        emailInput.value = 'Dunkin@gmail.com';
+        passwordInput.value = 'Dunkin1111';
+
+        // Dispatch input events
+        emailInput.dispatchEvent(new Event('input', { bubbles: true }));
+        passwordInput.dispatchEvent(new Event('input', { bubbles: true }));
+
+        // Trigger pulse highlight animation
+        emailInput.classList.remove('input-autofilled');
+        passwordInput.classList.remove('input-autofilled');
+        void emailInput.offsetWidth; // Force reflow to replay CSS keyframe
+        emailInput.classList.add('input-autofilled');
+        passwordInput.classList.add('input-autofilled');
+
+        // Button state feedback
+        if (autoFillBtn) {
+            autoFillBtn.classList.add('filled');
+            autoFillBtn.innerHTML = '<i class="fa-solid fa-check"></i> Filled!';
+            setTimeout(() => {
+                autoFillBtn.classList.remove('filled');
+                autoFillBtn.innerHTML = '<i class="fa-solid fa-wand-magic-sparkles"></i> Auto Fill';
+            }, 1600);
+        }
+
+        // SweetAlert2 Toast Feedback
+        if (typeof Swal !== 'undefined') {
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top',
+                showConfirmButton: false,
+                timer: 1500,
+                timerProgressBar: false
+            });
+
+            Toast.fire({
+                icon: 'success',
+                title: 'Demo credentials auto-filled!'
+            });
+        }
+    };
+
+    if (autoFillBtn) autoFillBtn.addEventListener('click', handleAutoFill);
+    if (demoEmail) demoEmail.addEventListener('click', handleAutoFill);
+    if (demoPassword) demoPassword.addEventListener('click', handleAutoFill);
 });

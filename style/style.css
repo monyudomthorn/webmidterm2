@@ -617,6 +617,55 @@ body::after {
     border-radius: 4px;
 }
 
+.btn-autofill {
+    background-color: #ffffff;
+    border: 1px solid var(--coffee-amber);
+    color: var(--coffee-roast);
+    font-size: 9.5px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    padding: 3px 9px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    transition: all 0.2s ease;
+    user-select: none;
+    font-family: inherit;
+}
+
+.btn-autofill i {
+    font-size: 9.5px;
+    color: var(--coffee-amber);
+    transition: all 0.2s ease;
+}
+
+.btn-autofill:hover {
+    background-color: var(--coffee-amber);
+    color: #ffffff;
+    box-shadow: 0 2px 8px rgba(200, 141, 81, 0.35);
+    transform: translateY(-1px);
+}
+
+.btn-autofill:hover i {
+    color: #ffffff;
+}
+
+.btn-autofill:active {
+    transform: translateY(0);
+}
+
+.btn-autofill.filled {
+    background-color: #2e7d32;
+    border-color: #2e7d32;
+    color: #ffffff;
+}
+
+.btn-autofill.filled i {
+    color: #ffffff;
+}
+
 .demo-details {
     display: flex;
     flex-direction: column;
@@ -627,12 +676,40 @@ body::after {
 .demo-details code {
     background-color: #ffffff;
     border: 1px solid #dfd1c3;
-    padding: 1px 5px;
-    border-radius: 3px;
+    padding: 1px 6px;
+    border-radius: 4px;
     color: var(--coffee-caramel);
     font-weight: 600;
     font-family: inherit;
     font-size: 11px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-block;
+}
+
+.demo-details code:hover {
+    background-color: #faeedf;
+    border-color: var(--coffee-amber);
+    color: var(--coffee-espresso);
+    box-shadow: 0 1px 4px rgba(200, 141, 81, 0.2);
+}
+
+/* Auto-fill Pulse Highlight for Inputs */
+@keyframes inputPulse {
+    0% {
+        border-color: var(--coffee-amber);
+        box-shadow: 0 0 0 4px rgba(200, 141, 81, 0.35);
+        background-color: #fff9f3;
+    }
+    100% {
+        border-color: var(--border-input);
+        box-shadow: none;
+        background-color: var(--bg-input);
+    }
+}
+
+.input-box input.input-autofilled {
+    animation: inputPulse 0.9s ease-out;
 }
 
 /* ==========================================================================
@@ -644,6 +721,20 @@ body::after {
     padding: 28px 24px !important;
     box-shadow: 0 25px 70px rgba(67, 40, 28, 0.2) !important;
     border: 1px solid rgba(230, 218, 205, 0.8) !important;
+}
+
+.swal2-popup.swal2-toast {
+    padding: 10px 16px !important;
+    border-radius: 12px !important;
+    box-shadow: 0 8px 24px rgba(67, 40, 28, 0.18) !important;
+    border: 1px solid rgba(230, 218, 205, 0.8) !important;
+}
+
+.swal2-popup.swal2-toast .swal2-title {
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    margin: 0 !important;
+    color: var(--coffee-roast) !important;
 }
 
 .swal2-title {
