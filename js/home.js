@@ -153,7 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
             badge: 'Popular',
             badgeClass: 'popular',
             desc: 'Rich Belgian dark chocolate and roasted hazelnut praline melted into espresso.',
-            image: 'https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=500&auto=format&fit=crop&q=80'
+            image: '../images/Hazelnut Mocha Latte.png'
         },
         {
             id: 'drink-16',
@@ -164,7 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
             badge: 'Seasonal',
             badgeClass: 'new',
             desc: 'Freshly steamed milk with cinnamon dolce syrup, topped with sweetened whipped cream.',
-            image: 'https://images.unsplash.com/photo-1541167760496-1628856ab772?w=500&auto=format&fit=crop&q=80'
+            image: '../images/Cinnamon Dolce Latte.png'
         },
         {
             id: 'drink-31',
@@ -175,7 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
             badge: 'Artisan',
             badgeClass: 'bestseller',
             desc: 'Equal parts dark espresso and velvety steamed warm milk to reduce acidity.',
-            image: 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=500&auto=format&fit=crop&q=80'
+            image: '../images/Spanish Cortado.png'
         },
         {
             id: 'drink-32',
@@ -186,7 +186,7 @@ document.addEventListener('DOMContentLoaded', () => {
             badge: 'Bold',
             badgeClass: '',
             desc: 'Espresso shots topped with hot water create a light layer of crema and deep flavor.',
-            image: 'https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?w=500&auto=format&fit=crop&q=80'
+            image: '../images/Dark Roast Cafe Americano.png'
         },
 
         // --- TEA & REFRESHERS ---
@@ -199,7 +199,7 @@ document.addEventListener('DOMContentLoaded', () => {
             badge: 'Organic',
             badgeClass: 'fresh',
             desc: 'Japanese Uji stone-ground green tea whisked with silky steamed milk and vanilla.',
-            image: 'https://images.unsplash.com/photo-1536256263959-770b48d82b0a?w=500&auto=format&fit=crop&q=80'
+            image: '../images/Ceremonial Matcha Latte.png'
         },
         {
             id: 'drink-17',
@@ -210,7 +210,7 @@ document.addEventListener('DOMContentLoaded', () => {
             badge: 'Fresh',
             badgeClass: 'fresh',
             desc: 'Delicate green tea infused with sun-ripened white peaches and fresh mint sprigs.',
-            image: 'https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=500&auto=format&fit=crop&q=80'
+            image: '../images/Peach Blossom Green Tea.jpg'
         },
         {
             id: 'drink-18',
@@ -221,7 +221,7 @@ document.addEventListener('DOMContentLoaded', () => {
             badge: 'Classic',
             badgeClass: '',
             desc: 'Black Assam tea brewed with cardamom, fresh ginger, cloves, and frothy steamed milk.',
-            image: 'https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=500&auto=format&fit=crop&q=80'
+            image: '../images/Royal Spiced Chai Latte.png'
         },
         {
             id: 'drink-19',
@@ -333,7 +333,7 @@ document.addEventListener('DOMContentLoaded', () => {
             badge: 'Sweet',
             badgeClass: 'popular',
             desc: 'Summer strawberry puree layered with a splash of milk and topped with whipped cream.',
-            image: 'https://images.unsplash.com/photo-1553530666-ba11a7da3888?w=500&auto=format&fit=crop&q=80'
+            image: '../images/Strawberries & Cream Frappe.webp'
         },
         {
             id: 'drink-38',
@@ -344,7 +344,7 @@ document.addEventListener('DOMContentLoaded', () => {
             badge: 'Deluxe',
             badgeClass: 'bestseller',
             desc: 'White chocolate sauce and dark coffee blended with milk and crowned with whipped cream.',
-            image: 'https://images.unsplash.com/photo-1577968897966-3d4325b36b61?w=500&auto=format&fit=crop&q=80'
+            image: '../images/White Chocolate Mocha Frappe.webp'
         },
 
         // --- BAKERY & PASTRIES ---
@@ -357,7 +357,7 @@ document.addEventListener('DOMContentLoaded', () => {
             badge: 'Fresh',
             badgeClass: 'fresh',
             desc: 'Golden flaky pastry baked fresh every morning with 100% French churned butter.',
-            image: 'https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=500&auto=format&fit=crop&q=80'
+            image: '../images/French Butter Croissant.png'
         },
         {
             id: 'drink-8',
@@ -368,7 +368,7 @@ document.addEventListener('DOMContentLoaded', () => {
             badge: 'Fresh',
             badgeClass: 'fresh',
             desc: 'Soft and pillowy artisan yeast donut dipped in rich dark chocolate ganache.',
-            image: 'https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=500&auto=format&fit=crop&q=80'
+            image: '../images/Belgian Choco Donut.png'
         },
         {
             id: 'drink-23',
@@ -379,7 +379,7 @@ document.addEventListener('DOMContentLoaded', () => {
             badge: 'Warm',
             badgeClass: 'popular',
             desc: 'Oven-fresh brioche dough swirled with Saigon cinnamon and cream cheese glaze.',
-            image: 'https://images.unsplash.com/photo-1509365465985-25d11c17e812?w=500&auto=format&fit=crop&q=80'
+            image: '../images/Warm Cinnamon Swirl Roll.png'
         },
         {
             id: 'drink-24',
@@ -390,7 +390,7 @@ document.addEventListener('DOMContentLoaded', () => {
             badge: 'Fresh',
             badgeClass: 'fresh',
             desc: 'Moist golden muffin packed with plump wild blueberries and streusel crunch.',
-            image: 'https://images.unsplash.com/photo-1607958996333-41aef7caefaa?w=500&auto=format&fit=crop&q=80'
+            image: '../images/Wild Blueberry Crumb Muffin.png'
         },
         {
             id: 'drink-25',
@@ -401,7 +401,7 @@ document.addEventListener('DOMContentLoaded', () => {
             badge: 'Chef Special',
             badgeClass: 'popular',
             desc: 'Espresso-soaked ladyfingers layered with sweet mascarpone mousse and Valrhona cocoa.',
-            image: 'https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=500&auto=format&fit=crop&q=80'
+            image: '../images/Artisan Tiramisu Cup.png'
         },
         {
             id: 'drink-39',
@@ -412,7 +412,7 @@ document.addEventListener('DOMContentLoaded', () => {
             badge: 'Crunchy',
             badgeClass: 'bestseller',
             desc: 'Twice-baked croissant filled with rich almond frangipane and topped with sliced almonds.',
-            image: 'https://images.unsplash.com/photo-1509722747041-616f39b57569?w=500&auto=format&fit=crop&q=80'
+            image: '../images/Almond Cream Croissant.jpg'
         },
         {
             id: 'drink-40',
@@ -423,7 +423,7 @@ document.addEventListener('DOMContentLoaded', () => {
             badge: 'Rich',
             badgeClass: 'popular',
             desc: 'Dense, chewy chocolate brownie baked with 70% dark Belgian cocoa and walnuts.',
-            image: 'https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=500&auto=format&fit=crop&q=80'
+            image: '../images/Dark Choco Fudge Brownie.png'
         },
         {
             id: 'drink-41',
@@ -434,7 +434,7 @@ document.addEventListener('DOMContentLoaded', () => {
             badge: 'Classic',
             badgeClass: '',
             desc: 'Velvety smooth cream cheese filling on a buttery graham cracker crust.',
-            image: 'https://images.unsplash.com/photo-1533134242443-d4fd215305ad?w=500&auto=format&fit=crop&q=80'
+            image: '../images/New York Baked Cheesecake.png'
         },
 
         // --- SIGNATURE SPECIALS ---
@@ -447,7 +447,7 @@ document.addEventListener('DOMContentLoaded', () => {
             badge: 'Signature',
             badgeClass: 'signature',
             desc: 'Organic raw wildflower honey, double espresso, oat milk, and a dusting of cinnamon cloud.',
-            image: 'https://images.unsplash.com/photo-1541167760496-1628856ab772?w=500&auto=format&fit=crop&q=80'
+            image: '../images/Honey Cinnamon Cloud Latte.png'
         },
         {
             id: 'drink-27',
@@ -458,7 +458,7 @@ document.addEventListener('DOMContentLoaded', () => {
             badge: 'Signature',
             badgeClass: 'signature',
             desc: 'Signature slow-steeped cold brew crowned with silky salted pistachio sweet cream.',
-            image: 'https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?w=500&auto=format&fit=crop&q=80'
+            image: '../images/Pistachio Cloud Cold Brew.png'
         },
         {
             id: 'drink-28',
@@ -469,7 +469,7 @@ document.addEventListener('DOMContentLoaded', () => {
             badge: 'Signature',
             badgeClass: 'signature',
             desc: 'Two scoops of handcrafted Madagascan vanilla gelato drowned in a boiling double ristretto.',
-            image: 'https://images.unsplash.com/photo-1594911772125-07fc7a2d8d9f?w=500&auto=format&fit=crop&q=80'
+            image: '../images/Salted Caramel Affogato.webp'
         },
         {
             id: 'drink-42',
@@ -480,7 +480,7 @@ document.addEventListener('DOMContentLoaded', () => {
             badge: 'Chef Special',
             badgeClass: 'signature',
             desc: 'Blonde espresso infused with smoked Tahitian vanilla syrup and velvety micro-foam.',
-            image: 'https://images.unsplash.com/photo-1534778101976-62847782c213?w=500&auto=format&fit=crop&q=80'
+            image: '../images/Smoked Vanilla Bean Latte.png'
         },
         {
             id: 'drink-43',
@@ -502,7 +502,7 @@ document.addEventListener('DOMContentLoaded', () => {
             badge: 'Limited',
             badgeClass: 'bestseller',
             desc: 'Espresso, steamed whole milk, sweet toffee nut syrup, whipped cream, and toffee sprinkles.',
-            image: 'https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=500&auto=format&fit=crop&q=80'
+            image: '../images/Toffee Nut Crunch Latte.png'
         }
     ];
 
@@ -527,7 +527,7 @@ document.addEventListener('DOMContentLoaded', () => {
             name: 'French Butter Croissant',
             price: 2.80,
             quantity: 1,
-            image: 'https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=500&auto=format&fit=crop&q=80',
+            image: '../images/French Butter Croissant.png',
             customs: 'Warm & Toasted',
             note: ''
         }
